@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+* Copyright (c) 2021 Neoark
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+
+- @package Share & Scan QR Code
+- @author Development Team @Neoark Software Pvt Ltd
+- @license http://opensource.org/licenses/MIT
+- @questions: http://www.support.gowithexperts.com
+- @link http://www.neoarks.com
+- @since Version 1.0.0
+- @filesource
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/rl_id"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:visibility="gone"
+                android:text="12344556666"
+                android:id="@+id/id"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+            <Button
+
+                android:visibility="gone"
+                android:textAllCaps="false"
+                android:paddingLeft="80dp"
+                android:paddingEnd="6dp"
+                android:textStyle="normal"
+                android:paddingTop="15dp"
+                android:gravity="start"
+                android:background="@drawable/shareqr"
+                android:id="@+id/user_id_show"
+                android:textSize="10sp"
+                android:text="SHOW MY GWE ID"
+                android:layout_width="250dp"
+                android:layout_height="45dp"/>
+
+        </RelativeLayout>
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:gravity="end"
+             android:layout_height="wrap_content">
+             <ImageView
+                 android:id="@+id/pass"
+                 android:layout_marginTop="15dp"
+                 android:layout_marginStart="109dp"
+                 android:layout_width="match_parent"
+                 android:layout_gravity="end|bottom"
+                 app:srcCompat="@drawable/hide_pass_word_temp"
+                 android:layout_height="30dp" />
+         </LinearLayout>
+
+        <TextView
+            android:textSize="12sp"
+            android:text="QR Code for safe and secure transactions "
+            android:id="@+id/can_pay"
+            android:layout_below="@+id/rl_id"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_below="@+id/can_pay"
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+            <ImageView
+                android:id="@+id/qr_code"
+                android:layout_width="250dp"
+                android:layout_height="250dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_below="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:visibility="gone"
+                        android:textSize="12sp"
+                        android:text=""
+                        android:layout_marginEnd="80dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:layout_width="250dp"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="15dp"
+                        android:textStyle="normal"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shareqr"
+                        android:id="@+id/share_qr"
+                        android:textSize="10sp"
+                        android:drawableLeft="@drawable/ic_share_icon"
+                        android:text="Share QR for receiving funds"/>
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_marginTop="14dp"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:layout_marginStart="60dp"
+                        android:text="for recieving and transfering"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:text=""
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
