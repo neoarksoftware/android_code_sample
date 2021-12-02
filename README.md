@@ -24,10 +24,8 @@ SOFTWARE.
  
  Development Environment & Disclaimer!
  -------------------------------------
- _It is an open source SAMPLE SCRIPT and the used development environment is `Node with 
- ExpressJS, Linux (Ubuntu-18.04 OR Ubuntu-20.04), MongoDB, JSON WebToken, BcryptJS
- etc`, however, author neither warranty nor recommend the script for the stagging 
- and/or for the production development environment._ 
+ _It is an open source SAMPLE SCRIPT and the used development environment is `Android SKD, Java, Git etc`, however,
+ author neither warranty nor recommend the script for the stagging and/or for the production development environment._ 
  
  * @package     SAMPLE SCRIPT
  * @author      Development Team @Neoark Software Pvt Ltd
