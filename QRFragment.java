@@ -29,7 +29,10 @@
 - @since Version 1.0.0
 - @filesource
 */
-package neoarks.smpl.code.fragment.v2;
+
+
+package neoarks.smpl.code.fragment.v2;	//Package name
+//Imported other supporting packages - START
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -77,8 +80,13 @@ import java.io.IOException;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+//Imported other supporting packages - END
 
-
+/* @class: QRFragment
+ * @description: This class is used for Generating, Scaning and Sharing QRcode through fragment
+ * @layout: qr_code is an xml layout
+ * @author Development Team @Neoark Software Pvt Ltd
+ */
 public class QRFragment extends Fragment {
     View view;
     private ImageView qrCode;
@@ -97,6 +105,12 @@ public class QRFragment extends Fragment {
     private static String id1="";
     private static final int PERMISSION_REQUEST_CODE = 200;
 
+
+    /* @class: onCreateView()
+     * @description: Render xml layout
+     * @layout: Layout IDs will be setup for calling API/endpoint
+     * @author Development Team @Neoark Software Pvt Ltd
+     */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -106,6 +120,11 @@ public class QRFragment extends Fragment {
         return view;
     }
 
+    /* @class: initData()
+     * @description: Auto initiated function
+     * @layout: Get integrated API response
+     * @author Development Team @Neoark Software Pvt Ltd
+     */
     private void initData() {
         ((TextView) getActivity().findViewById(R.id.title)).setText("My QR");
         neoarks.smpl.code.utill.ProjectUtill.splitgnum(Preferences.getInstance(getActivity()).getQr(),id);
@@ -121,6 +140,11 @@ public class QRFragment extends Fragment {
             else { Toast.makeText(getContext(), "Missing something in API response", Toast.LENGTH_SHORT); }
         } catch (WriterException e) { e.printStackTrace(); }
 
+       /* @class: setOnClickListener()
+        * @description: Override setOnClickListener function for sharing QRcode
+        * @layout: Used for integrated API response
+        * @author Development Team @Neoark Software Pvt Ltd
+        */
         shareQR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,6 +155,12 @@ public class QRFragment extends Fragment {
                 }
             }
         });
+
+        /* @class: setOnClickListener()
+        * @description: Override setOnClickListener function for transfering funds
+        * @layout: Used for integrated API response
+        * @author Development Team @Neoark Software Pvt Ltd
+        */
         qrCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,6 +181,11 @@ public class QRFragment extends Fragment {
             }
         });
 
+       /* @class: onClick()
+        * @description: Override onClick function for setting stringBuffer for API call
+        * @layout: Used for integrated API response
+        * @author Development Team @Neoark Software Pvt Ltd
+        */
         user_id_show.setVisibility(View.VISIBLE);
         pass.setImageDrawable(QRFragment.this.getResources().getDrawable(R.drawable.hide_pass_word_temp));
         user_id_show.setOnClickListener(new View.OnClickListener() {
@@ -180,17 +215,27 @@ public class QRFragment extends Fragment {
         });
     } //initData - closed
 
+    /* @class: initView()
+     * @description: Setting up layout IDs of the rendered layout
+     * @params: Values of setup lyout IDs will need to pass with the APIs
+     * @author Development Team @Neoark Software Pvt Ltd
+     */
     private void initView() {
         qrCode = view.findViewById(R.id.qr_code);
-        pass=view.findViewById(R.id.pass);
+        pass = view.findViewById(R.id.pass);
         id = view. findViewById(R.id.id);
         canPay = view. findViewById(R.id.can_pay);
         main = view. findViewById(R.id.main);
         shareQR = view.findViewById(R.id.share_qr);
         rl_id = view.findViewById(R.id.rl_id);
-        user_id_show= view.findViewById(R.id.user_id_show);
+        user_id_show = view.findViewById(R.id.user_id_show);
     }
 
+    /* @class: sharebitmapqr()
+     * @description: Share QRcode for scanning and getting payment
+     * @params: 
+     * @author Development Team @Neoark Software Pvt Ltd
+     */
     private void sharebitmapqr() {
         Bitmap icon = qr_code_bitmap;
         Intent share = new Intent(Intent.ACTION_SEND);
@@ -222,12 +267,22 @@ public class QRFragment extends Fragment {
         catch (Exception e) { e.getMessage(); }
     }
 
+    /* @class: checkPermission()
+     * @description: Check required permissions
+     * @params: 
+     * @author Development Team @Neoark Software Pvt Ltd
+     */
     private boolean checkPermission() {
         boolean permission =  ContextCompat.checkSelfPermission(getContext(), WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(getContext(), READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED;
         return permission;
     }
 
+    /* @class: requestPermissionAndContinue()
+     * @description: Request for required permission for using QRcode
+     * @params: QRcode functionality will not work if permissions are denied by the user
+     * @author Development Team @Neoark Software Pvt Ltd
+     */
     private void requestPermissionAndContinue() {
         if(ContextCompat.checkSelfPermission(getContext(), WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(getContext(), READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -256,6 +311,11 @@ public class QRFragment extends Fragment {
         }
     }
 
+    /* @class: onRequestPermissionsResult()
+     * @description: Action based on required permission for using QRcode
+     * @params: QRcode functionality will not work if permissions are denied by the user
+     * @author Development Team @Neoark Software Pvt Ltd
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == PERMISSION_REQUEST_CODE) {
