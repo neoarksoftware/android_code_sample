@@ -30,7 +30,7 @@ SOFTWARE.
  * @package     SAMPLE SCRIPT
  * @author      Development Team @Neoark Software Pvt Ltd
  * @license     http://opensource.org/licenses/MIT
- * @questions:  http://www.support.gowithexperts.com
+ * @questions:  http://www.support.gowithexperts.com/open.php
  * @link        http://www.neoarks.com
  * @since       Version 1.0.0
  * @filesource
